@@ -642,7 +642,7 @@ def make_undefined_step_snippets(undefined_steps, make_snippet=None):
     return step_snippets
 
 
-def print_undefined_step_snippets(undefined_steps, stream=None, colored=False):
+def print_undefined_step_snippets(undefined_steps, stream=None, colored=True):
     """
     Print snippets for the undefined steps that were discovered.
 
@@ -655,8 +655,7 @@ def print_undefined_step_snippets(undefined_steps, stream=None, colored=False):
     if not stream:
         stream = sys.stderr
 
-    msg = u"\nYouth "
-    msg += 'this is test'
+    msg = u"\nYou can implement step definitions for undefined steps with "
     msg += u"these snippets:\n\n"
     msg += u"\n".join(make_undefined_step_snippets(undefined_steps))
 

@@ -446,7 +446,10 @@ class Context(object):
         steps = self.feature.parser.parse_steps(steps_text)
         with self._use_with_behave_mode():
             for step in steps:
-                passed = step.run(self._runner, quiet=True, capture=False)
+                print('--executing substep--')
+                print(step)
+                passed = step.run(self._runner, quiet=False, capture=False)
+                print('--executed substep--')
                 if not passed:
                     # -- ISSUE #96: Provide more substep info to diagnose problem.
                     step_line = u"%s %s" % (step.keyword, step.name)

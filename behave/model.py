@@ -1766,7 +1766,7 @@ class Step(BasicStatement, Replayable):
         outline_step = self
         return ScenarioOutlineBuilder.make_step_for_row(outline_step, table_row)
 
-    def run(self, runner, quiet=False, capture=True):
+    def run(self, runner, quiet=False, capture=False):
         # pylint: disable=too-many-branches, too-many-statements
         # -- RESET: Run-time information.
         # self.status = Status.untested
